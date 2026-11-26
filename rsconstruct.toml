@@ -4,8 +4,13 @@
 # src_dirs entries name directories; "." (the whole tree) is a config error
 reject_dot_src_dirs = true
 
+# lint the Markdown files with rumdl (policy: .rumdl.toml)
+[processor.checker.rumdl]
+src_dirs = ["doc"]
+src_files = ["README.md"]
+
 [processor.checker.taplo]
-src_files = ["rsconstruct.toml"]
+src_files = [".rumdl.toml", "rsconstruct.toml"]
 
 # lint the Lua configuration with luacheck (policy: .luacheckrc)
 [processor.checker.iluacheck]
